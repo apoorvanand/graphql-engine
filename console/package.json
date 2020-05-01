@@ -22,7 +22,9 @@
     "dev": "concurrently --kill-others \"npm run watch-client\" \"npm run start-dev\" ",
     "precommit": "lint-staged",
     "cypress": "cypress open",
-    "test": "cypress run --spec 'cypress/integration/test_complete.js' --config baseUrl=$CYPRESS_BASE_URL"
+    "test": "cypress run --spec 'cypress/integration/test_complete.js' --config baseUrl=$CYPRESS_BASE_URL",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "lint-staged": {
     "*.js": [
@@ -92,7 +94,8 @@
     "semver": "^5.3.0",
     "superagent": "^1.4.0",
     "uuid": "^3.0.1",
-    "valid-url": "^1.0.9"
+    "valid-url": "^1.0.9",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -162,5 +165,6 @@
   },
   "engines": {
     "node": "8.9.1"
-  }
+  },
+  "snyk": true
 }
